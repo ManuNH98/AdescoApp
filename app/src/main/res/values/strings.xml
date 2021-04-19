@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AdescoApp</string>
+    <string name="title_activity_menu">MainActivity</string>
+    <string name="title_parcela">Parcela</string>
+    <string name="title_calendario">Calendario</string>
+    <string name="title_cuaderno">Cuaderno</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="title_almacen">Almacen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
