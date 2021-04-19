@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AdescoApp</string>
-    <string name="title_activity_menu">MainActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
     <string name="title_parcela">Parcela</string>
     <string name="title_calendario">Calendario</string>
     <string name="title_cuaderno">Cuaderno</string>
