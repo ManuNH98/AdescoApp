@@ -22,14 +22,16 @@
         android:name="com.navarromanuel.adescoapp.ui.cuaderno.CuadernoFragment"
         android:label="@string/title_cuaderno"
         tools:layout="@layout/fragment_cuaderno" />
+
     <fragment
-        android:id="@+id/almacenFragment"
+        android:id="@+id/navigation_almacen"
         android:name="com.navarromanuel.adescoapp.ui.almacen.AlmacenFragment"
-        android:label="fragment_almacen"
+        android:label="@string/title_almacen"
         tools:layout="@layout/fragment_almacen" />
+
     <fragment
-        android:id="@+id/perfilFragment"
+        android:id="@+id/navigation_perfil"
         android:name="com.navarromanuel.adescoapp.ui.perfil.PerfilFragment"
-        android:label="fragment_perfil"
+        android:label="@string/title_perfil"
         tools:layout="@layout/fragment_perfil" />
 </navigation>
