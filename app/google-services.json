@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "352742136252",
-    "project_id": "adescoapp-2c829",
-    "storage_bucket": "adescoapp-2c829.appspot.com"
+    "project_number": "276812996874",
+    "project_id": "adesco-app",
+    "storage_bucket": "adesco-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:352742136252:android:e5255107f40127da1ef3b9",
+        "mobilesdk_app_id": "1:276812996874:android:a7df656ddd193590f95af3",
         "android_client_info": {
           "package_name": "com.navarromanuel.adescoapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "352742136252-mvtue5cdnhhrhashtqqsbh2biv6uuu50.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.navarromanuel.adescoapp",
-            "certificate_hash": "b27aeadb1ef25e7ebd3433d764406596c2a76b06"
-          }
-        },
-        {
-          "client_id": "352742136252-gpcvc66um12luh47mc4m8o9pvkrqt2lj.apps.googleusercontent.com",
+          "client_id": "276812996874-2d1okt52nhodk1e60om217f6viqfae0h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAeh8cdI2S7g-iQwmXGYUXloUzafL-9kzw"
+          "current_key": "AIzaSyCVEOrASBuSCma0QyAohuGvuaSwiZiD-B0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "352742136252-gpcvc66um12luh47mc4m8o9pvkrqt2lj.apps.googleusercontent.com",
+              "client_id": "276812996874-2d1okt52nhodk1e60om217f6viqfae0h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
