@@ -3,16 +3,25 @@ package com.navarromanuel.adescoapp.activity;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.entidades.Parcela;
+import com.navarromanuel.adescoapp.interfaces.iComunicaFragments;
+import com.navarromanuel.adescoapp.ui.parcela.DetalleParcelaFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity implements iComunicaFragments {
 
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+    DetalleParcelaFragment detalleParcelaFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +35,21 @@ public class MenuActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    @Override
+    public void enviarParcela(Parcela parcela) {
+        detalleParcelaFragment = new DetalleParcelaFragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", parcela);
+        detalleParcelaFragment.setArguments(bundleEnvio);
+
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment, detalleParcelaFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
     }
 
 }
