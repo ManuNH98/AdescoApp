@@ -94,7 +94,7 @@
     <Button android:id="@+id/btnRegistrar"
         android:layout_marginTop="10dp"
         android:drawableLeft="@drawable/user"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:layout_width="280dp"
         android:text="Registrarse"
         android:layout_gravity="center_horizontal"
@@ -103,7 +103,7 @@
 
     <Button android:id="@+id/btnVolver"
         android:layout_marginTop="5dp"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:layout_width="280dp"
         android:text="Atrás"
         android:layout_gravity="center_horizontal"
