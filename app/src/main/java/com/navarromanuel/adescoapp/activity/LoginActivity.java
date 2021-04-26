@@ -1,33 +1,314 @@
 package com.navarromanuel.adescoapp.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.navarromanuel.adescoapp.R;
+
+import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editTextTextPassword;
-    private Button buttonReset;
+    private Button btnLogin, btnRes, buttonReset;
+    private EditText inputEmail;
+    private TextView textView;
+    private ProgressDialog progressDialog;
     private CheckBox mostrarContraseña;
+
+    // FIREBASE
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        mAuth = FirebaseAuth.getInstance();
+        Toast.makeText(LoginActivity.this, "¡REGISTRE USUARIO Y PASS Y CONTINUE EL REGISTRO! \n                          POR FAVOR", Toast.LENGTH_LONG).show();
+        // ICON EN ACTION BAR
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        inputEmail = (EditText) findViewById(R.id.editTextTextEmailAddress);
+        btnLogin = findViewById(R.id.buttonLogin);
+        btnRes = findViewById(R.id.buttonRegistrar);
         editTextTextPassword = (EditText)findViewById(R.id.editTextTextPassword);
         mostrarContraseña = (CheckBox)findViewById(R.id.checkBox);
 
         buttonReset = findViewById(R.id.buttonReset);
         buttonReset.setBackground(null);
+
+
+      /*  btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email = inputEmail.getText().toString();
+
+                if (checkEmail(email)) {
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Email o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                }
+
+
+                // Reset errors.
+
+                editTextTextPassword.setError(null);
+
+                String Password = editTextTextPassword.getText().toString().trim();
+
+                boolean cancel = false;
+                View focusView = null;
+
+
+                if (TextUtils.isEmpty(Password)) {
+
+                    focusView = editTextTextPassword;
+                    cancel = true;
+                }
+
+                if (!Password.matches(".*[a-z].*")) {
+                    //Toast.makeText(getApplicationContext(), "La contraseña debe tener como minimo 1 mayuscula, 1 minuscula y un minimo de 8 caracteres ", Toast.LENGTH_SHORT).show();
+
+                    focusView = editTextTextPassword;
+                    cancel = true;
+
+                } else {
+
+                }
+
+                if (!Password.matches(".*[A-Z].*")) {
+
+                    focusView = editTextTextPassword;
+                    cancel = true;
+                }
+
+                if (!Password.matches(".{8,15}")) {
+                    focusView = editTextTextPassword;
+                    cancel = true;
+                }
+
+                if (cancel) {
+
+                    focusView.requestFocus();
+                } else {
+
+                    try {
+
+                        entrarUsuario();
+                        //Intent intent = new  Intent(getApplicationContext(), gabri.com.dam.greenfilm.Cualquiera.class);
+                        // startActivity(intent);
+
+                    } catch (Exception e) {
+
+                    }
+                }
+               // overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
+            }
+        });
+
+
+        btnRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //inputPassword.setError(null);
+
+                String Password = editTextTextPassword.getText().toString().trim();
+
+                boolean cancel = false;
+                View focusView = null;
+
+
+                if (TextUtils.isEmpty(Password)){
+
+                    focusView = editTextTextPassword;
+                    cancel = true;
+                }
+
+                if (!Password.matches(".*[a-z].*")){
+                    Toast.makeText(getApplicationContext(), "La contraseña debe tener como minimo 1 mayuscula, 1 minuscula y un minimo de 8 caracteres ", Toast.LENGTH_SHORT).show();
+
+                    focusView = editTextTextPassword;
+                    cancel = true;
+                }
+
+                if (!Password.matches(".*[A-Z].*")){
+
+                    focusView = inputEmail;
+                    cancel = true;
+                }
+
+                if (!Password.matches(".{8,15}")){
+                    focusView = editTextTextPassword;
+                    cancel = true;                }
+
+                if (cancel) {
+
+                    focusView.requestFocus();
+
+                }
+
+                String email = inputEmail.getText().toString();
+
+                if(!checkEmail(email)) {
+                    Toast.makeText(getApplicationContext(), "Debes ingresar un Email válido", Toast.LENGTH_SHORT).show();
+                }
+                try{
+                    registrarUsuario();
+
+                }catch (Exception e){}
+
+            }
+        });*/
+
+
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (buttonReset.isClickable()) {
+                    buttonReset.setTextColor(Color.BLUE);
+                    Intent intent = new Intent(getApplicationContext(), ResetPassword.class);
+                    startActivity(intent);
+
+                }
+
+                //overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
+    }
+
+   /* public final Pattern EMAIL_ADDRESS_PATTERN = Pattern.compile(
+            "[a-zA-Z0-9+._%-+]{1,256}" +
+                    "@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9-]{0,64}" +
+                    "(" +
+                    "." +
+                    "[a-zA-Z0-9][a-zA-Z0-9-]{0,25}" +
+                    ")+"
+    );
+
+    //comprobar si el usuario es email
+    private boolean checkEmail(String email) {
+        return EMAIL_ADDRESS_PATTERN.matcher(email).matches();
+    }*/
+
+
+   /* private void cargar() {
+
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String email = preferences.getString("email", "");
+        String pass = preferences.getString("pass", "");
+
+        inputEmail.setText(email);
+        inputPassword.setText(pass);
+
+    }*/
+
+
+    public void entrarUsuario(View view) {
+
+        final String correo = inputEmail.getText().toString();
+        final String pass = editTextTextPassword.getText().toString();
+
+        if (TextUtils.isEmpty(correo)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar un email.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(pass)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar su contraseña.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        mAuth.signInWithEmailAndPassword(correo, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    //progressDialog.setMessage("Espere un momento");
+                    //progressDialog.setCanceledOnTouchOutside(false);
+                    //progressDialog.show();
+
+                    // intentRegistro(emailstring, pwdstring);
+                    Intent intent = new Intent(getApplication(), MenuActivity.class);
+                    //intent.putExtra(com.navarromanuel.adescoapp.activity.MenuActivity.email, correo);
+                    startActivity(intent);
+
+
+                   // Toast.makeText(LoginActivity.this, "¡LOGEADO CON ÉXITO!\n¡BIENVENIDO!\n" + correo.toUpperCase(), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(com.navarromanuel.adescoapp.activity.LoginActivity.this, "¡Error al entrar! Revisa los datos", Toast.LENGTH_LONG).show();
+                }
+//                progressDialog.dismiss();
+
+            }
+        });
+
+    }
+
+    public void registrarUsuario(View view) {
+
+        final String correo = inputEmail.getText().toString();
+        final String pass = editTextTextPassword.getText().toString();
+
+        if (TextUtils.isEmpty(correo)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar un email.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(pass)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar su contraseña.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        mAuth.createUserWithEmailAndPassword(correo, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(LoginActivity.this, "¡Se ha registrado Email y Password correctamente!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                    startActivity(intent);
+                    //overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
+                } else {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(LoginActivity.this, " El usuario ya existe", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, " ¡ERROR al REGISTRARSE!", Toast.LENGTH_LONG).show();
+                    }
+                }
+                //progressDialog.dismiss();
+            }
+        });
 
     }
 
@@ -40,6 +321,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
 
     public void mostrarContraseña(View v){
         int cursor = editTextTextPassword.getSelectionEnd();

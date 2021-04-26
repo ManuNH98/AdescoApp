@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.navarromanuel.adescoapp.R;
 import com.navarromanuel.adescoapp.ui.calendario.CalendarioViewModel;
 
-public class AlmacenFragment extends Fragment {
+/*public class AlmacenFragment extends Fragment {
 
     private AlmacenViewModel almacenViewModel;
 
@@ -34,4 +34,4 @@ public class AlmacenFragment extends Fragment {
         });
         return root;
     }
-}
+}*/

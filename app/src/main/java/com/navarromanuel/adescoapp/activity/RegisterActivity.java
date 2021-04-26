@@ -10,10 +10,17 @@ import com.navarromanuel.adescoapp.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     public void enviarMenu(View view) {
