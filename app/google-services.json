@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "789141685645",
-    "project_id": "adesco-cdc",
-    "storage_bucket": "adesco-cdc.appspot.com"
+    "project_number": "363307641972",
+    "firebase_url": "https://adesco-cdc21-default-rtdb.firebaseio.com",
+    "project_id": "adesco-cdc21",
+    "storage_bucket": "adesco-cdc21.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:789141685645:android:3c8cfcafea50e5f9b269c4",
+        "mobilesdk_app_id": "1:363307641972:android:0a8f8299b7bf39d68b3521",
         "android_client_info": {
           "package_name": "com.navarromanuel.adescoapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "789141685645-o9e87iqcsbun5q562eiqd4r7o0nv15mc.apps.googleusercontent.com",
+          "client_id": "363307641972-1hkpvridac3vvpa5lhikigdh7idga90q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBKRsfrXEpTAl_2qNI_Nubvc03-IYfaRw8"
+          "current_key": "AIzaSyCxdX5Iv9KNYr5gMukiU3FNAAmqDfY_EU4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "789141685645-o9e87iqcsbun5q562eiqd4r7o0nv15mc.apps.googleusercontent.com",
+              "client_id": "363307641972-1hkpvridac3vvpa5lhikigdh7idga90q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
