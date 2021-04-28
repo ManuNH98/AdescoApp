@@ -72,7 +72,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                registrarUsuario();
+
+                //overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
 
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void enviarMenu(View view) {
+    /*public void enviarMenu(View view) {
         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
         startActivity(intent);
     }
@@ -100,6 +108,46 @@ public class LoginActivity extends AppCompatActivity {
     public void enviarRegistrar(View view) {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
+    }*/
+
+    public void registrarUsuario() {
+
+        final String correo = inputEmail.getText().toString();
+        final String pass = editTextTextPassword.getText().toString();
+
+        if (TextUtils.isEmpty(correo)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar un email.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(pass)) {
+            Toast.makeText(LoginActivity.this, "Debe ingresar su contraseña.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        mAuth.createUserWithEmailAndPassword(correo, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(LoginActivity.this, "¡Se ha registrado Email y Password correctamente!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                    startActivity(intent);
+                    //overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
+                } else {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(LoginActivity.this, " El usuario ya existe", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, " ¡ERROR al REGISTRARSE!", Toast.LENGTH_LONG).show();
+                    }
+                }
+                progressDialog.dismiss();
+            }
+        });
+
     }
 
     public void entrarUsuario() {
