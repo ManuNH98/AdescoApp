@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,8 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.navarromanuel.adescoapp.R;
-import com.navarromanuel.adescoapp.activity.LoginActivity;
-import com.navarromanuel.adescoapp.activity.MenuActivity;
 
 public class ResetPassword extends AppCompatActivity {
 
