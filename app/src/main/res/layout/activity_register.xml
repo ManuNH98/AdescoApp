@@ -105,7 +105,7 @@
             android:textSize="16dp"
             android:textStyle="bold"/>
 
-        <EditText android:id="@+id/edtNombr"
+        <EditText android:id="@+id/edtNombrEm"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:hint="   Nombre Empresa" />
@@ -120,7 +120,7 @@
             android:textSize="16dp"
             android:textStyle="bold"/>
 
-        <EditText android:id="@+id/edtNomre"
+        <EditText android:id="@+id/edtDirec"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:hint="   Dirección" />
@@ -214,7 +214,7 @@
             android:textSize="16dp"
             android:textStyle="bold"/>
 
-        <EditText android:id="@+id/edtExp"
+        <EditText android:id="@+id/edtExpN"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:hint="   Nº Registro de explotaciones nacional"
