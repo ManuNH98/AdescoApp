@@ -2,6 +2,7 @@ package com.navarromanuel.adescoapp.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,18 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.drawable.logo);
        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    public void enviarParcela(View view) {
+    }
+
+    public void enviarCDC(View view) {
+    }
+
+    public void enviarInventario(View view) {
+    }
+
+    public void enviarPerfil(View view) {
     }
 
     /*@Override

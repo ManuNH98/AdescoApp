@@ -43,6 +43,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
+            android:onClick="enviarParcela"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -80,6 +81,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:onClick="enviarCDC"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -117,6 +119,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:onClick="enviarInventario"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -154,6 +157,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:onClick="enviarPerfil"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
