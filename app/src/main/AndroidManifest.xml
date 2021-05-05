@@ -10,7 +10,11 @@
         android:label="AdescoCDC"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdescoApp">
-        <activity android:name=".activity.MenuActivity"/>
+        <activity android:name=".menu.CuadernoActivity"></activity>
+        <activity android:name=".menu.InventarioActivity" />
+        <activity android:name=".menu.ParcelaActivity" />
+        <activity android:name=".menu.PerfilActivity" />
+        <activity android:name=".activity.MenuActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.ResetPassword" />
         <activity android:name=".activity.LoginActivity" />
