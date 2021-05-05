@@ -12,6 +12,251 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"></LinearLayout>
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/logo_register"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logoPerfil"
+            android:layout_marginTop="10dp"/>
+
+     <TextView
+         android:id="@+id/textVi"
+         android:textColor="@color/purple_500"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="MI PERFIL:"
+         android:textAlignment="center"
+         android:textAllCaps="true"
+         android:layout_marginTop="35dp"
+         android:textSize="16dp"
+         android:textStyle="bold"/>
+
+       <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textAllCaps="true"
+            android:layout_marginTop="15dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtNombre"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Nombre" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellidos"
+            android:textAllCaps="true"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtApellido"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Apellidos"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NIF"
+            android:textAllCaps="true"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+
+        <TextView android:id="@+id/edtNIF"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   NIF"/>
+
+
+        <TextView
+            android:id="@+id/textV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MI EMPRESA:"
+            android:textAlignment="center"
+            android:textColor="@color/purple_500"
+            android:textAllCaps="true"
+            android:layout_marginTop="35dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+         <TextView
+            android:id="@+id/textVie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre Empresa:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtNombrEm"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Nombre Empresa" />
+
+        <TextView
+            android:id="@+id/textViw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtDirec"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Dirección" />
+
+        <TextView
+            android:id="@+id/textVl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código Postal:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtCod"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Código Postal"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de teléfono:"
+            android:textAllCaps="true"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtTelefono"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:tooltipText="Debes ingregar un Email que exista"
+            android:hint="   Número de teléfono"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textVoe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciudad:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtCiu"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Ciudad"/>
+
+        <TextView
+            android:id="@+id/textVC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cif:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtCif"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Cif"/>
+
+
+        <TextView
+            android:id="@+id/textVo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Provincia:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtProv"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Provincia"/>
+
+        <TextView
+            android:id="@+id/textVu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nº Registro de explotaciones nacional:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <EditText android:id="@+id/edtExpN"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Nº Registro de explotaciones nacional"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textVp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nº Registro de explotaciones autonómico:"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView android:id="@+id/edtExpA"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="   Nº Registro de explotaciones autonomico"
+            android:inputType="number"/>
+
+        <Button android:id="@+id/btnEditP"
+            android:textColor="@color/white"
+            android:layout_marginTop="35dp"
+            android:layout_height="45dp"
+            android:layout_width="280dp"
+            android:text="Editar perfil"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip" />
+
+         <Button android:id="@+id/btnAtras"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_height="45dp"
+            android:layout_width="280dp"
+            android:text="Volver"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip" />
+
+
+    </LinearLayout>
 
 </ScrollView>
