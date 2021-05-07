@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdescoApp">
         <activity android:name=".menu.CuadernoActivity"></activity>
+        <activity android:name=".menu.ActualizarPerfil" />
         <activity android:name=".menu.InventarioActivity" />
         <activity android:name=".menu.ParcelaActivity" />
         <activity android:name=".menu.PerfilActivity" />

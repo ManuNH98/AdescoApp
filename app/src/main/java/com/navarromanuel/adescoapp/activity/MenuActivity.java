@@ -1,5 +1,6 @@
 package com.navarromanuel.adescoapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.menu.PerfilActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -29,9 +31,12 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void enviarInventario(View view) {
+
     }
 
     public void enviarPerfil(View view) {
+        Intent intent4 = new  Intent(MenuActivity.this, PerfilActivity.class);
+        startActivity(intent4);
     }
 
     /*@Override

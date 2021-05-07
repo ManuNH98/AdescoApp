@@ -53,13 +53,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.logo);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Pojo = new Pojo();
 
         editNombre = (EditText) findViewById(R.id.edtNombre);
         editApe = (EditText) findViewById(R.id.edtApellido);
         editNIF = (EditText) findViewById(R.id.edtNIF);
+
         editNombreEm = (EditText) findViewById(R.id.edtNombrEm);
         editTlfEm = (EditText) findViewById(R.id.edtTelefono);
         editDirec = (EditText) findViewById(R.id.edtDirec);
