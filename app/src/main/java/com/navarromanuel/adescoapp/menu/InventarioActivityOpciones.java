@@ -1,22 +1,20 @@
 package com.navarromanuel.adescoapp.menu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.navarromanuel.adescoapp.R;
-import com.navarromanuel.adescoapp.activity.MenuActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class InventarioActivity extends AppCompatActivity {
+import com.navarromanuel.adescoapp.R;
+
+public class InventarioActivityOpciones extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventario);
+        setContentView(R.layout.activity_inventario_total);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.logo);
@@ -24,26 +22,16 @@ public class InventarioActivity extends AppCompatActivity {
 
     }
 
-    public void enviarFito(View view) {
-        Intent intent1 = new  Intent(InventarioActivity.this, FitoActivity.class);
-        startActivity(intent1);
+    public void enviarFitosanitario(View view) {
     }
 
-    public void enviarFert(View view) {
-        Intent intent2 = new  Intent(InventarioActivity.this, FrtzActivity.class);
-        startActivity(intent2);
+    public void enviarFertilizantes(View view) {
     }
 
     public void enviarHerramientas(View view) {
-        Intent intent3 = new  Intent(InventarioActivity.this, ToolActivity.class);
-        startActivity(intent3);
 
     }
 
-    public void enviarMiInventario(View view) {
-        Intent intent4 = new  Intent(InventarioActivity.this, InventarioActivityOpciones.class);
-        startActivity(intent4);
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

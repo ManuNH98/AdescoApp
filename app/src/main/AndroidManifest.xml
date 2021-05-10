@@ -13,6 +13,10 @@
         <activity android:name=".menu.CuadernoActivity"></activity>
         <activity android:name=".menu.ActualizarPerfil" />
         <activity android:name=".menu.InventarioActivity" />
+        <activity android:name=".menu.InventarioActivityOpciones" />
+        <activity android:name=".menu.FitoActivity" />
+        <activity android:name=".menu.FrtzActivity" />
+        <activity android:name=".menu.ToolActivity" />
         <activity android:name=".menu.ParcelaActivity" />
         <activity android:name=".menu.PerfilActivity" />
         <activity android:name=".activity.MenuActivity" />

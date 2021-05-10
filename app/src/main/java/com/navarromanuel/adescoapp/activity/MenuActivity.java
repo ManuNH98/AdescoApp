@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.menu.InventarioActivity;
 import com.navarromanuel.adescoapp.menu.PerfilActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -31,7 +32,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void enviarInventario(View view) {
-
+        Intent intent = new  Intent(MenuActivity.this, InventarioActivity.class);
+        startActivity(intent);
     }
 
     public void enviarPerfil(View view) {
