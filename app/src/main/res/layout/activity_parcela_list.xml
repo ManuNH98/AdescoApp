@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
@@ -24,38 +25,36 @@
             android:id="@+id/nombreParcela"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
             android:text="Nombre de parcela"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_toRightOf="@id/imagenParcela"
-            android:layout_toEndOf="@id/imagenParcela"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
-        </TextView>
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
-            android:visibility="invisible"
-            android:text="Info"
-            android:layout_toRightOf="@id/imagenParcela"
-            android:layout_toEndOf="@id/imagenParcela"
             android:layout_below="@+id/nombreParcela"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
-        </TextView>
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
+            android:text="Info"
+            android:visibility="invisible"></TextView>
 
         <TextView
             android:id="@+id/metros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Metros"
-            android:layout_toRightOf="@id/imagenParcela"
-            android:layout_toEndOf="@id/imagenParcela"
             android:layout_below="@+id/info"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"/>
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
+            android:text="Metros" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
 import com.navarromanuel.adescoapp.menu.InventarioActivity;
+import com.navarromanuel.adescoapp.menu.ParcelaActivity;
 import com.navarromanuel.adescoapp.menu.PerfilActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -26,6 +27,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void enviarParcela(View view) {
+        Intent intent1 = new  Intent(MenuActivity.this, ParcelaActivity.class);
+        startActivity(intent1);
     }
 
     public void enviarCDC(View view) {

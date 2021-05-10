@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_bg"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@drawable/bg"
     tools:context=".menu.InventarioActivity">
 
     <TextView
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="82dp"
-        android:textSize="42dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Herramientas"/>
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="30dp"
+        android:text="Herramientas"
+        android:textColor="@color/white"
+        android:textSize="42dp"
+        android:textStyle="bold" />
 
 </LinearLayout>
