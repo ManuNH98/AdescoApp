@@ -246,14 +246,5 @@
             android:paddingLeft="15dip"
             android:paddingRight="15dip" />
 
-        <Button android:id="@+id/btnVolver"
-            android:layout_marginTop="4dp"
-            android:layout_height="55dp"
-            android:layout_width="280dp"
-            android:text="Atrás"
-            android:layout_gravity="center_horizontal"
-            android:paddingLeft="15dip"
-            android:paddingRight="15dip" />
-
     </LinearLayout>
 </ScrollView>

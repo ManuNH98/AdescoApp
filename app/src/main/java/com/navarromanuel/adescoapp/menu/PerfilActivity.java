@@ -26,7 +26,7 @@ import com.navarromanuel.adescoapp.activity.Pojo;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    private Button btnAtras, btnEditE, btnEditPerfil;
+    private Button btnAtras, btnEditPerfil;
     private TextView editNombre, editApe, editNIF,
             editTlfEm, editDirec, editNombreEm, editCodEm, editCiudadEm,
             editProvinciaEm, editCif, editRegistroN, editRegistroA;
@@ -125,7 +125,7 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
         btnAtras = (Button) findViewById(R.id.btnAtras);
-        btnEditE = (Button) findViewById(R.id.btnEditE);
+        //btnEditE = (Button) findViewById(R.id.btnEditE);
         btnEditPerfil = (Button) findViewById(R.id.btnEditPerfil);
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -170,22 +170,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
 
         });
-
-
-        btnEditE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               // Intent intent = new  Intent(getApplicationContext(), ActualizarEmpresa.class);
-                //startActivity(intent);
-
-                //overridePendingTransition(R.anim.right_in, R.anim.right_out);
-
-            }
-
-        });
-
-
 
     }
 
