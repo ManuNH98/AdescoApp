@@ -54,7 +54,7 @@ public class MainActivityFertilizante extends AppCompatActivity {
                         .build();
 
 
-        mAdapter=new ToolAdapter(options);
+        mAdapter=new FertilizanteAdapter(options);
 
         recycler.setAdapter(mAdapter);
 

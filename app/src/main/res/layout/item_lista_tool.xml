@@ -3,23 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="8dp"
+            >
+
+            <ImageView
+                android:layout_width="89dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/farm" />
 
             <TextView
                 android:id="@+id/lblNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="155dp"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -28,12 +39,12 @@
 
             <TextView
                 android:id="@+id/lblCantidad"
-
+                android:textSize="18dp"
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lblNombre"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="155dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorPrimary"
                 android:paddingLeft="15dp"
@@ -48,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lblCantidad"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="155dp"
                 android:textSize="18dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
 
