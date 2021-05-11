@@ -40,7 +40,7 @@ public class MainActivityFitosanitario extends AppCompatActivity {
 
         DatabaseReference references =
                 FirebaseDatabase.getInstance().getReference()
-                        .child("ProcuctoFitosanitario").child(""+user.getUid());
+                        .child("ProductoFitosanitario").child(""+user.getUid());
 
 
         RecyclerView recycler = findViewById(R.id.recycler_View_fito);
