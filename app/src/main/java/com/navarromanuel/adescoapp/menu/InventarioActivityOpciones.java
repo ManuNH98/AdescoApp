@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
 import com.navarromanuel.adescoapp.activity.MenuActivity;
+import com.navarromanuel.adescoapp.adapter.MainActivityFertilizante;
 import com.navarromanuel.adescoapp.adapter.MainActivityFitosanitario;
+import com.navarromanuel.adescoapp.adapter.MainActivityTool;
 
 public class InventarioActivityOpciones extends AppCompatActivity {
 
@@ -31,10 +33,13 @@ public class InventarioActivityOpciones extends AppCompatActivity {
     }
 
     public void enviarFertilizantes(View view) {
+        Intent intent2 = new  Intent(InventarioActivityOpciones.this, MainActivityFertilizante.class);
+        startActivity(intent2);
     }
 
     public void enviarHerramientas(View view) {
-
+        Intent intent1 = new  Intent(InventarioActivityOpciones.this, MainActivityTool.class);
+        startActivity(intent1);
     }
 
 

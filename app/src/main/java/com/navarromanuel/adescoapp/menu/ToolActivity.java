@@ -58,7 +58,7 @@ public class ToolActivity extends AppCompatActivity {
         edtC = (EditText) findViewById(R.id.edtCant);
         edtNo = (EditText) findViewById(R.id.edtNotas);
 
-        referencia = basededatos.getInstance().getReference().child("Herramientas");
+        referencia = basededatos.getInstance().getReference().child("Herramientas").child(""+user.getUid());
 
         referencia.addValueEventListener((new ValueEventListener() {
             @Override

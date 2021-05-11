@@ -13,6 +13,8 @@
         <activity android:name=".menu.CuadernoActivity"></activity>
         <activity android:name=".menu.ActualizarPerfil" />
         <activity android:name=".adapter.MainActivityFitosanitario" />
+        <activity android:name=".adapter.MainActivityFertilizante" />
+        <activity android:name=".adapter.MainActivityTool" />
         <activity android:name=".menu.InventarioActivity" />
         <activity android:name=".menu.InventarioActivityOpciones" />
         <activity android:name=".menu.FitoActivity" />

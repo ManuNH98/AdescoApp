@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adapter.MainActivityFitosanitario">
+    tools:context=".adapter.MainActivityTool">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,23 +14,23 @@
 
 
     <ImageView
-        android:layout_width="69dp"
-        android:layout_height="71dp"
-        android:layout_marginLeft="170dp"
+        android:layout_width="138dp"
+        android:layout_height="87dp"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bag" />
+        android:background="@drawable/tool" />
 
     <TextView android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:textColor="@color/white"
-        android:layout_marginTop="90dp"
-        android:text="Lista de productos fitosanitarios"
+        android:layout_marginTop="100dp"
+        android:text="Lista de herramientas"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textAlignment="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_View_fito"
+        android:id="@+id/recycler_View_tool"
         android:layout_marginTop="160dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
