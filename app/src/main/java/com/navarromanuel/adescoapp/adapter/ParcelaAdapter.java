@@ -21,11 +21,17 @@ public class ParcelaAdapter extends RecyclerView.Adapter<ParcelaAdapter.ViewHold
     private List<Parcela> mData;
     private LayoutInflater mInflater;
     private Context context;
+    final ParcelaAdapter.OnItemClickListener listener;
 
-    public ParcelaAdapter(List<Parcela> itemList, Context context){
+    public interface OnItemClickListener{
+        void onItemClick(Parcela item);
+    }
+
+    public ParcelaAdapter(List<Parcela> itemList, Context context, ParcelaAdapter.OnItemClickListener listener){
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
         this.mData = itemList;
+        this.listener = listener;
     }
 
     @Override
@@ -65,6 +71,12 @@ public class ParcelaAdapter extends RecyclerView.Adapter<ParcelaAdapter.ViewHold
             nombre.setText(item.getNombre());
             info.setText(item.getInfo());
             metros.setText(item.getMetros());
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    listener.onItemClick(item);
+                }
+            });
         }
     }
 }

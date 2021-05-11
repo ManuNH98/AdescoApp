@@ -17,6 +17,7 @@
         <activity android:name=".menu.FitoActivity" />
         <activity android:name=".menu.FrtzActivity" />
         <activity android:name=".menu.ToolActivity" />
+        <activity android:name=".menu.DetalleParcelaActivity" />
         <activity android:name=".menu.ParcelaActivity" />
         <activity android:name=".menu.PerfilActivity" />
         <activity android:name=".activity.MenuActivity" />
