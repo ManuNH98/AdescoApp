@@ -58,7 +58,7 @@ public class FrtzActivity extends AppCompatActivity {
         edtC = (EditText) findViewById(R.id.edtCant);
         edtNo = (EditText) findViewById(R.id.edtNotas);
 
-        referencia = basededatos.getInstance().getReference().child("ProcuctoFertilizante");
+        referencia = basededatos.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid());
 
         referencia.addValueEventListener((new ValueEventListener() {
             @Override

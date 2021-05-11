@@ -58,7 +58,7 @@ public class FitoActivity extends AppCompatActivity {
         edtC = (EditText) findViewById(R.id.edtCant);
         edtNo = (EditText) findViewById(R.id.edtNotas);
 
-        referencia = basededatos.getInstance().getReference().child("ProcuctoFitosanitario");
+        referencia = basededatos.getInstance().getReference().child("ProductoFitosanitario").child(""+user.getUid());
 
         referencia.addValueEventListener((new ValueEventListener() {
             @Override

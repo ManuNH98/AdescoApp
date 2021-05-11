@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@drawable/ic_bg"
-    tools:context=".menu.InventarioActivity">
+    tools:context=".menu.InventarioActivityOpciones">
 
     <TextView
         android:layout_marginTop="50dp"
@@ -23,6 +23,7 @@
         android:layout_marginTop="120dp"
         android:id="@+id/button"
         android:textStyle="bold"
+        android:onClick="enviarFitosanitario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mis fitosanitarios" />

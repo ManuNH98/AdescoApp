@@ -1,5 +1,6 @@
 package com.navarromanuel.adescoapp.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -8,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.activity.MenuActivity;
+import com.navarromanuel.adescoapp.adapter.MainActivityFitosanitario;
 
 public class InventarioActivityOpciones extends AppCompatActivity {
 
@@ -23,6 +26,8 @@ public class InventarioActivityOpciones extends AppCompatActivity {
     }
 
     public void enviarFitosanitario(View view) {
+        Intent intent = new  Intent(InventarioActivityOpciones.this, MainActivityFitosanitario.class);
+        startActivity(intent);
     }
 
     public void enviarFertilizantes(View view) {
