@@ -98,12 +98,6 @@ public class RegisterActivity extends AppCompatActivity {
         //edtPass = (EditText) findViewById(R.id.edtPass);
         // cbMostrar = findViewById(R.id.ChkMuestrame);
 
-
-        // ICON EN ACTION BAR
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         btnRes = (Button) findViewById(R.id.btnRegistrar);
 
         btnRes.setOnClickListener(new View.OnClickListener() {

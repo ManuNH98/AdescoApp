@@ -29,15 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="50dp">
 
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="Nombre:"
+            android:layout_marginTop="40dp"
+            android:text="Producto:"
             android:textAllCaps="true"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -46,58 +46,44 @@
             android:id="@+id/edtNombre"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="   Nombre" />
+            android:hint="   Producto" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Apellidos"
+            android:text="Cantidad:"
             android:textAllCaps="true"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtApellido"
+            android:id="@+id/edtCant"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="   Apellidos" />
+            android:hint="   Cantidad/Unidad de medida" />
 
         <TextView
             android:id="@+id/textVi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Nombre:"
+            android:text="Notas:"
             android:textAllCaps="true"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtNombe"
+            android:id="@+id/edtNotas"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="   Nombre" />
-
-        <TextView
-            android:id="@+id/textVie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Apellidos"
-            android:textAllCaps="true"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edtApellid"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="   Apellidos" />
+            android:layout_height="100dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"/>
 
         <Button
-            android:id="@+id/btnRegistrar"
+            android:id="@+id/btnA"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
