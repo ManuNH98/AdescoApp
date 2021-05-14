@@ -37,6 +37,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
     @Override
     protected void onBindViewHolder(@NonNull final ParcelaViewHolder parcelaViewHolder, final int position, @NonNull final Parcela parcela){
+        parcelaViewHolder.id.setText(parcela.getId());
         parcelaViewHolder.nombre.setText(parcela.getNombre());
         parcelaViewHolder.tipoCultivo.setText(parcela.getTipo());
         parcelaViewHolder.metros.setText(parcela.getMetros());
@@ -138,12 +139,13 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
     class ParcelaViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
-        TextView nombre, info, metros, tipoCultivo, fechaInicio, fechaFin;
+        TextView id, nombre, info, metros, tipoCultivo, fechaInicio, fechaFin;
         ImageView edit;
 
         public ParcelaViewHolder(@NonNull View itemView){
             super(itemView);
 
+            id = itemView.findViewById((R.id.id));
             nombre = itemView.findViewById(R.id.nombreParcela);
             info = itemView.findViewById(R.id.info);
             metros = itemView.findViewById(R.id.metros);
