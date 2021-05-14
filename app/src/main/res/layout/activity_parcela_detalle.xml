@@ -7,22 +7,21 @@
 
     <ImageView
         android:id="@+id/imagen_detalleid"
-        android:layout_width="411dp"
-        android:layout_height="410dp"
+        android:layout_width="410dp"
+        android:layout_height="210dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_launcher_background">
-    </ImageView>
+        android:src="@drawable/ic_launcher_background"/>
 
     <TextView
         android:id="@+id/nombre_detalle"
-        android:text="nombreDetalle"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:text="nombreDetalle"
+        android:textSize="30sp"
+        android:textStyle="bold">
 
     </TextView>
 
@@ -30,19 +29,60 @@
         android:id="@+id/metros_detalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorVerde"
-        android:text="metrosDetalle"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textSize="20sp"/>
+        android:layout_marginRight="15dp"
+        android:text="metrosDetalle"
+        android:textColor="@color/colorVerde"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tipo_cultivo_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:text="tipoCultivoDetalle"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/fecha_inicio_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:text="inicioDetalle"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/fecha_fin_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:text="finDetalle"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/descripcion_detalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:text="descripcionDetalle"/>
+        android:layout_marginRight="15dp"
+        android:text="descripcionDetalle"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/editar_detalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center"
+        android:text="EDITAR" />
 </LinearLayout>

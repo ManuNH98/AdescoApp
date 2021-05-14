@@ -31,7 +31,7 @@
             android:layout_toRightOf="@id/imagenParcela"
             android:text="Nombre de parcela"
             android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/info"
@@ -43,7 +43,7 @@
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
             android:text="Info"
-            android:visibility="invisible"></TextView>
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/metros"
@@ -55,6 +55,54 @@
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
             android:text="Metros" />
+
+        <TextView
+            android:id="@+id/tipoCultivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/metros"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
+            android:text="Tipo de cultivo" />
+
+        <TextView
+            android:id="@+id/fechaInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tipoCultivo"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
+            android:visibility="invisible"
+            android:text="FechaInicio" />
+
+        <TextView
+            android:id="@+id/fechaFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fechaInicio"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imagenParcela"
+            android:layout_toRightOf="@id/imagenParcela"
+            android:visibility="invisible"
+            android:text="FechaFin" />
+
+        <ImageView
+            android:id="@+id/editIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tipoCultivo"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/imagenParcela"
+            android:layout_toRightOf="@id/tipoCultivo"
+            android:src="@drawable/edit" />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,17 +1,18 @@
 package com.navarromanuel.adescoapp.entidad;
 
-import java.io.Serializable;
-
-public class Parcela implements Serializable {
-    private String nombre, info, metros;
+public class Parcela {
+    private String nombre, info, metros, tipo, fechainicio, fechafin;
     private int imagenid;
 
-    public Parcela(){}
+    Parcela(){}
 
-    public Parcela(String nombre, String info, String metros, int imagenid) {
+    public Parcela(String nombre, String info, String metros, String tipo, String fechainicio, String fechafin, int imagenid) {
         this.nombre = nombre;
         this.info = info;
         this.metros = metros;
+        this.tipo = tipo;
+        this.fechainicio = fechainicio;
+        this.fechafin = fechafin;
         this.imagenid = imagenid;
     }
 
@@ -39,11 +40,48 @@ public class Parcela implements Serializable {
         this.metros = metros;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getFechainicio() {
+        return fechainicio;
+    }
+
+    public void setFechainicio(String fechainicio) {
+        this.fechainicio = fechainicio;
+    }
+
+    public String getFechafin() {
+        return fechafin;
+    }
+
+    public void setFechafin(String fechafin) {
+        this.fechafin = fechafin;
+    }
+
     public int getImagenid() {
         return imagenid;
     }
 
     public void setImagenid(int imagenid) {
         this.imagenid = imagenid;
+    }
+
+    @Override
+    public String toString() {
+        return "Parcela{" +
+                "nombre='" + nombre + '\'' +
+                ", info='" + info + '\'' +
+                ", metros='" + metros + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", fechainicio='" + fechainicio + '\'' +
+                ", fechafin='" + fechafin + '\'' +
+                ", imagenid=" + imagenid +
+                '}';
     }
 }
