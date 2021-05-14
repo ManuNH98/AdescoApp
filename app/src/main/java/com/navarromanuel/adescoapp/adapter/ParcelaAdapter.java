@@ -76,10 +76,10 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
                         public void onClick(View view) {
                             Map<String,Object> map=new HashMap<>();
                             map.put("nombre",nombre.getText().toString());
-                            map.put("tipoCultivo",tipoCultivo.getText().toString());
+                            map.put("tipo",tipoCultivo.getText().toString());
                             map.put("metros",metros.getText().toString());
-                            map.put("fechaInicio",fechaInicio.getText().toString());
-                            map.put("fechaFin",fechaFin.getText().toString());
+                            map.put("fechainicio",fechaInicio.getText().toString());
+                            map.put("fechafin",fechaFin.getText().toString());
                             map.put("info",info.getText().toString());
 
                             FirebaseDatabase.getInstance().getReference().child("Parcelas")
