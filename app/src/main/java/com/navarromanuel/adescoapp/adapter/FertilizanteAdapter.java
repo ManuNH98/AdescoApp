@@ -108,10 +108,10 @@ public class FertilizanteAdapter extends FirebaseRecyclerAdapter<PojoInventario,
             public void onClick(View view) {
 
                 AlertDialog.Builder builder=new AlertDialog.Builder(saveViewHolder.producto.getContext());
-                builder.setTitle("Delete Panel");
-                builder.setMessage("Delete...?");
+                builder.setTitle("Panel de borrado");
+                builder.setMessage("¿Estas seguro de que quieres borrar este producto?");
 
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseDatabase.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid()).child(getRef(position).getKey()).removeValue();
