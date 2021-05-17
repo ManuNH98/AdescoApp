@@ -86,7 +86,7 @@ public class FitoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (edtN.getText().toString().isEmpty() || edtC.getText().toString().isEmpty()  || edtNo.getText().toString().isEmpty() ) {
+                if (edtN.getText().toString().isEmpty() || edtC.getText().toString().isEmpty()) {
 
                     Toast.makeText(FitoActivity.this, "Debes rellenar todos los campos primero ", Toast.LENGTH_LONG).show();
                 }
