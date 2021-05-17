@@ -30,7 +30,7 @@ import com.navarromanuel.adescoapp.activity.RegisterActivity;
 public class ToolActivity extends AppCompatActivity {
 
     private Button btnAniadir;
-    private EditText edtN, edtC, edtNo;
+    private EditText edtN, edtC, edtNo, edtID, edtFechaA, edtTitular;
 
     private ProgressDialog progressDialog;
     FirebaseDatabase basededatos;
@@ -57,6 +57,10 @@ public class ToolActivity extends AppCompatActivity {
         edtN = (EditText) findViewById(R.id.edtNombre);
         edtC = (EditText) findViewById(R.id.edtCant);
         edtNo = (EditText) findViewById(R.id.edtNotas);
+
+        edtID = (EditText) findViewById(R.id.idproductoEditar);
+        edtTitular = (EditText) findViewById(R.id.titularEditar);
+        edtFechaA = (EditText) findViewById(R.id.fechaAlta);
 
         referencia = basededatos.getInstance().getReference().child("Herramientas").child(""+user.getUid());
 
@@ -100,6 +104,14 @@ public class ToolActivity extends AppCompatActivity {
                     referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
                     PojoInventario.setNotas(edtNo.getText().toString());
                     referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+
+                    PojoInventario.setID(edtID.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    PojoInventario.setTitular(edtTitular.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    PojoInventario.setFechaAlta(edtFechaA.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+
 
                     PojoInventario.setUid(user.getUid());
                     referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);

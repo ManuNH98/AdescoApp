@@ -30,7 +30,7 @@
                 android:id="@+id/lblNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lblNombre"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorPrimary"
                 android:paddingLeft="15dp"
@@ -55,12 +55,46 @@
 
 
             <TextView
+                android:id="@+id/lblidproductoEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/lblCantidad"
+                android:textColor="@color/black"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblidProcedencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_below="@id/lblidproductoEditar"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/lblfechaAlta"
+                android:layout_below="@id/lblidProcedencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold"/>
+
+            <TextView
                 android:id="@+id/lblNotas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/lblCantidad"
-                android:layout_marginLeft="120dp"
-                android:textSize="18dp"
+                android:layout_below="@id/lblfechaAlta"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
 
                 android:textColor="@color/black"

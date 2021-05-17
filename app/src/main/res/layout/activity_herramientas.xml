@@ -36,7 +36,7 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="90dp"
                     android:text="Producto:"
                     android:textAllCaps="true"
                     android:textSize="16dp"
@@ -47,6 +47,68 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="   Producto" />
+
+
+
+                <TextView
+                    android:id="@+id/textVi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="ID Producto:"
+                    android:textAllCaps="true"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ID Producto"
+                    android:id="@+id/idproductoEditar"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Titular:"
+                    android:textAllCaps="true"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Titular"
+                    android:id="@+id/titularEditar"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Fecha Alta:"
+                    android:textAllCaps="true"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha Alta"
+                    android:id="@+id/fechaAlta"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="date"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/textView1"
@@ -65,7 +127,6 @@
                     android:hint="   Cantidad/Unidad de medida" />
 
                 <TextView
-                    android:id="@+id/textVi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -73,6 +134,7 @@
                     android:textAllCaps="true"
                     android:textSize="16dp"
                     android:textStyle="bold" />
+
 
                 <EditText
                     android:id="@+id/edtNotas"

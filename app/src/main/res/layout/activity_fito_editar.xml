@@ -24,9 +24,40 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Procucto"
+            android:hint="Producto"
             android:id="@+id/productoEditar"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idproductoEditar"
+            android:hint="ID Producto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Procedencia"
+            android:id="@+id/idProcedencia"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha Alta"
+            android:id="@+id/fechaAlta"
+            android:layout_marginLeft="10dp"
+            android:inputType="date"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>

@@ -51,6 +51,10 @@ public class FertilizanteAdapter extends FirebaseRecyclerAdapter<PojoInventario,
         saveViewHolder.cant.setText(pojoI.getCantidad());
         saveViewHolder.notas.setText(pojoI.getNotas());
 
+        saveViewHolder.id.setText(pojoI.getID());
+        saveViewHolder.procedencia.setText(pojoI.getProcedencia());
+        saveViewHolder.fechaAlta.setText(pojoI.getFechaAlta());
+
 
 
         saveViewHolder.edit.setOnClickListener(new View.OnClickListener() {
@@ -66,12 +70,19 @@ public class FertilizanteAdapter extends FirebaseRecyclerAdapter<PojoInventario,
                 final EditText cantidad=myview.findViewById(R.id.cantidadEditar);
                 final EditText notas=myview.findViewById(R.id.notasEditar);
 
+                final EditText id=myview.findViewById(R.id.idproductoEditar);
+                final EditText procedencia=myview.findViewById(R.id.idProcedencia);
+                final EditText fechaAlta=myview.findViewById(R.id.fechaAlta);
+
                 Button submit=myview.findViewById(R.id.btnEditar);
 
                 producto.setText(pojoI.getProducto());
                 cantidad.setText(pojoI.getCantidad());
                 notas.setText(pojoI.getNotas());
 
+                id.setText(pojoI.getID());
+                procedencia.setText(pojoI.getProcedencia());
+                fechaAlta.setText(pojoI.getFechaAlta());
 
                 dialogPlus.show();
 
@@ -82,6 +93,10 @@ public class FertilizanteAdapter extends FirebaseRecyclerAdapter<PojoInventario,
                         map.put("producto",producto.getText().toString());
                         map.put("cantidad",cantidad.getText().toString());
                         map.put("notas",notas.getText().toString());
+
+                        map.put("id",id.getText().toString());
+                        map.put("procedencia",procedencia.getText().toString());
+                        map.put("fechaAlta",fechaAlta.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid()).child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {

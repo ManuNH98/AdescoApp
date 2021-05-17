@@ -47,12 +47,15 @@ public class ToolAdapter extends FirebaseRecyclerAdapter<PojoInventario, ToolHol
         saveViewHolder.notas.setText(pojoI.getNotas());
 
 
+        saveViewHolder.id.setText(pojoI.getID());
+        saveViewHolder.titular.setText(pojoI.getTitular());
+        saveViewHolder.fechaAlta.setText(pojoI.getFechaAlta());
 
         saveViewHolder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final DialogPlus dialogPlus=DialogPlus.newDialog(saveViewHolder.producto.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.activity_ftz_editar))
+                        .setContentHolder(new ViewHolder(R.layout.activity_tool_editar))
                         .setExpanded(true,1100)
                         .create();
 
@@ -61,11 +64,19 @@ public class ToolAdapter extends FirebaseRecyclerAdapter<PojoInventario, ToolHol
                 final EditText cantidad=myview.findViewById(R.id.cantidadEditar);
                 final EditText notas=myview.findViewById(R.id.notasEditar);
 
+                final EditText id=myview.findViewById(R.id.idproductoEditar);
+                final EditText titular=myview.findViewById(R.id.titularEditar);
+                final EditText fechaAlta=myview.findViewById(R.id.fechaAlta);
+
                 Button submit=myview.findViewById(R.id.btnEditar);
 
                 producto.setText(pojoI.getProducto());
                 cantidad.setText(pojoI.getCantidad());
                 notas.setText(pojoI.getNotas());
+
+                id.setText(pojoI.getID());
+                titular.setText(pojoI.getTitular());
+                fechaAlta.setText(pojoI.getFechaAlta());
 
 
                 dialogPlus.show();
@@ -77,6 +88,10 @@ public class ToolAdapter extends FirebaseRecyclerAdapter<PojoInventario, ToolHol
                         map.put("producto",producto.getText().toString());
                         map.put("cantidad",cantidad.getText().toString());
                         map.put("notas",notas.getText().toString());
+
+                        map.put("id",id.getText().toString());
+                        map.put("titular",titular.getText().toString());
+                        map.put("fechaAlta",fechaAlta.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("Herramientas").child(""+user.getUid()).child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {

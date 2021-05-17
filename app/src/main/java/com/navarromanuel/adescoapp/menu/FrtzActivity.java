@@ -30,7 +30,7 @@ import com.navarromanuel.adescoapp.activity.RegisterActivity;
 public class FrtzActivity extends AppCompatActivity {
 
     private Button btnAniadir;
-    private EditText edtN, edtC, edtNo;
+    private EditText edtN, edtC, edtNo, edtID, edtFechaA, edtProcedencia;
 
     private ProgressDialog progressDialog;
     FirebaseDatabase basededatos;
@@ -57,6 +57,9 @@ public class FrtzActivity extends AppCompatActivity {
         edtN = (EditText) findViewById(R.id.edtNombre);
         edtC = (EditText) findViewById(R.id.edtCant);
         edtNo = (EditText) findViewById(R.id.edtNotas);
+        edtID = (EditText) findViewById(R.id.idproductoEditar);
+        edtProcedencia = (EditText) findViewById(R.id.procedenciaEditar);
+        edtFechaA = (EditText) findViewById(R.id.fechaAlta);
 
         referencia = basededatos.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid());
 
@@ -86,7 +89,9 @@ public class FrtzActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (edtN.getText().toString().isEmpty() || edtC.getText().toString().isEmpty()) {
+                if (edtN.getText().toString().isEmpty() || edtC.getText().toString().isEmpty()|| edtProcedencia.getText().toString().isEmpty()
+                        || edtFechaA.getText().toString().isEmpty()
+                        || edtID.getText().toString().isEmpty()) {
 
                     Toast.makeText(FrtzActivity.this, "Debes rellenar todos los campos primero ", Toast.LENGTH_LONG).show();
                 }
@@ -99,6 +104,13 @@ public class FrtzActivity extends AppCompatActivity {
                     PojoInventario.setCantidad(edtC.getText().toString());
                     referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
                     PojoInventario.setNotas(edtNo.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+
+                    PojoInventario.setID(edtID.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    PojoInventario.setProcedencia(edtProcedencia.getText().toString());
+                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    PojoInventario.setFechaAlta(edtFechaA.getText().toString());
                     referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
 
                     PojoInventario.setUid(user.getUid());
