@@ -62,7 +62,7 @@ public class ToolActivity extends AppCompatActivity {
         edtTitular = (EditText) findViewById(R.id.titularEditar);
         edtFechaA = (EditText) findViewById(R.id.fechaAlta);
 
-        referencia = basededatos.getInstance().getReference().child("Herramientas").child(""+user.getUid());
+        referencia = basededatos.getInstance().getReference().child("Herramientas").child(""+user.getUid()).push();
 
         referencia.addValueEventListener((new ValueEventListener() {
             @Override
@@ -99,22 +99,22 @@ public class ToolActivity extends AppCompatActivity {
                 else if (PojoInventario != null) {
 
                     PojoInventario.setProducto(edtN.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setCantidad(edtC.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setNotas(edtNo.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
                     PojoInventario.setID(edtID.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setTitular(edtTitular.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setFechaAlta(edtFechaA.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
 
                     PojoInventario.setUid(user.getUid());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
                     //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
                     Toast.makeText(getApplicationContext(), "Se ha registrado los datos correctamente", Toast.LENGTH_SHORT).show();

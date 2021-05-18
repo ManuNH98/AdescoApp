@@ -61,7 +61,7 @@ public class FrtzActivity extends AppCompatActivity {
         edtProcedencia = (EditText) findViewById(R.id.procedenciaEditar);
         edtFechaA = (EditText) findViewById(R.id.fechaAlta);
 
-        referencia = basededatos.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid());
+        referencia = basededatos.getInstance().getReference().child("ProductoFertilizante").child(""+user.getUid()).push();
 
         referencia.addValueEventListener((new ValueEventListener() {
             @Override
@@ -100,21 +100,21 @@ public class FrtzActivity extends AppCompatActivity {
                 else if (PojoInventario != null) {
 
                     PojoInventario.setProducto(edtN.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setCantidad(edtC.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setNotas(edtNo.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
                     PojoInventario.setID(edtID.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setProcedencia(edtProcedencia.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
                     PojoInventario.setFechaAlta(edtFechaA.getText().toString());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
                     PojoInventario.setUid(user.getUid());
-                    referencia.child(String.valueOf(i + 1)).setValue(PojoInventario);
+                    referencia.setValue(PojoInventario);
 
                     //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
                     Toast.makeText(getApplicationContext(), "Se ha registrado los datos correctamente", Toast.LENGTH_SHORT).show();
