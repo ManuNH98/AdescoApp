@@ -40,6 +40,10 @@
 
             <TextView
                 android:id="@+id/lblCantidad"
+                android:paddingLeft="6dp"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:paddingRight="6dp"
                 android:textSize="20dp"
                 android:textColor="@color/white"
                 android:layout_width="wrap_content"
