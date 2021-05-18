@@ -40,7 +40,7 @@ public class FertilizanteHolder extends RecyclerView.ViewHolder {
     public void bindGuardado(PojoInventario pojoI) {
 
         field1 = mView.findViewById(R.id.lblNombre);
-        field1.setText("Producto: \n" + pojoI.getProducto());
+        field1.setText(pojoI.getProducto());
 
         field2 = mView.findViewById(R.id.lblCantidad);
         field2.setText("Cantidad: \n" + pojoI.getCantidad());
@@ -49,7 +49,7 @@ public class FertilizanteHolder extends RecyclerView.ViewHolder {
         field3.setText("Notas: \n" + pojoI.getNotas());
 
         field4 = mView.findViewById(R.id.lblidproductoEditar);
-        field4.setText("Id: " + pojoI.getID());
+        field4.setText("ID: " + pojoI.getID());
         field5 = mView.findViewById(R.id.lblidProcedencia);
         field5.setText("Procedencia:  \n" + pojoI.getProcedencia());
         field6 = mView.findViewById(R.id.lblfechaAlta);

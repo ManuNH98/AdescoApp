@@ -40,7 +40,7 @@ public class ToolHolder extends RecyclerView.ViewHolder {
     public void bindGuardado(PojoInventario pojoI) {
 
         field1 = mView.findViewById(R.id.lblNombre);
-        field1.setText("Producto: \n" + pojoI.getProducto());
+        field1.setText( pojoI.getProducto());
 
         field2 = mView.findViewById(R.id.lblCantidad);
         field2.setText("Cantidad: \n" + pojoI.getCantidad());
@@ -49,7 +49,7 @@ public class ToolHolder extends RecyclerView.ViewHolder {
         field3.setText("Notas: \n" + pojoI.getNotas());
 
         field4 = mView.findViewById(R.id.lblidproductoEditar);
-        field4.setText("Id: " + pojoI.getID());
+        field4.setText("ID: " + pojoI.getID());
         field5 = mView.findViewById(R.id.lbltitular);
         field5.setText("Titular:  \n" + pojoI.getTitular());
         field6 = mView.findViewById(R.id.lblfechaAlta);
