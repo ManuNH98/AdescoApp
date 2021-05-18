@@ -1,12 +1,13 @@
 package com.navarromanuel.adescoapp.entidad;
 
 public class Parcela {
-    private String id, nombre, info, metros, tipo, fechainicio, fechafin;
+    private String id, nombre, info, metros, tipo, fechainicio, Uid,fechafin;
     private int imagenid;
 
     Parcela(){}
 
-    public Parcela(String id, String nombre, String info, String metros, String tipo, String fechainicio, String fechafin, int imagenid) {
+    public Parcela(String id, String Uid, String nombre, String info, String metros, String tipo, String fechainicio, String fechafin, int imagenid) {
+        this.Uid = Uid;
         this.id = id;
         this.nombre = nombre;
         this.info = info;
@@ -23,6 +24,14 @@ public class Parcela {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 
     public String getNombre() {
@@ -84,14 +93,15 @@ public class Parcela {
     @Override
     public String toString() {
         return "Parcela{" +
-                "nombre='" + nombre + '\'' +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", info='" + info + '\'' +
                 ", metros='" + metros + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", fechainicio='" + fechainicio + '\'' +
+                ", Uid='" + Uid + '\'' +
                 ", fechafin='" + fechafin + '\'' +
                 ", imagenid=" + imagenid +
-                ", id=" + id +
                 '}';
     }
 }

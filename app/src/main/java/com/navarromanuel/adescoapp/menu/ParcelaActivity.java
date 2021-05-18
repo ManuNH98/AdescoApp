@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +35,13 @@ public class ParcelaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewParcela;
     ParcelaAdapter adapter;
+    DatabaseReference referencia;
+    FirebaseDatabase basededatos;
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+    // FIREBASE
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +56,8 @@ public class ParcelaActivity extends AppCompatActivity {
         recyclerViewParcela = findViewById(R.id.recyclerView);
         recyclerViewParcela.setLayoutManager(new  LinearLayoutManager(this));
 
+        referencia = basededatos.getInstance().getReference().child("Parcelas").child(""+user.getUid()).push();
+
         FirebaseRecyclerOptions<Parcela> options =
                 new FirebaseRecyclerOptions.Builder<Parcela>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Parcelas"), Parcela.class)
@@ -54,6 +65,9 @@ public class ParcelaActivity extends AppCompatActivity {
 
         adapter=new ParcelaAdapter(options);
         recyclerViewParcela.setAdapter(adapter);
+
+        mAuth = FirebaseAuth.getInstance();
+
 
     }
 

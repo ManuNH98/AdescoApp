@@ -110,11 +110,21 @@
             android:layout_height="40dp"
             android:layout_below="@+id/tipoCultivo"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="150dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
             android:layout_toEndOf="@+id/imagenParcela"
             android:layout_toRightOf="@id/tipoCultivo"
             android:src="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/deleteIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tipoCultivo"
+            android:layout_toEndOf="@id/tipoCultivo"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/delete"/>
 
     </RelativeLayout>
 

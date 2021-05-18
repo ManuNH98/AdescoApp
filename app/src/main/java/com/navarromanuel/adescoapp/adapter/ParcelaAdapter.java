@@ -102,7 +102,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             }
         });
 
-        /*parcelaViewHolder.delete.setOnClickListener(new View.OnClickListener() {
+        parcelaViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(parcelaViewHolder.nombre.getContext());
@@ -126,7 +126,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
                 builder.show();
             }
-        });*/
+        });
 
     }
 
@@ -140,7 +140,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
     class ParcelaViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
         TextView id, nombre, info, metros, tipoCultivo, fechaInicio, fechaFin;
-        ImageView edit;
+        ImageView edit, delete;
 
         public ParcelaViewHolder(@NonNull View itemView){
             super(itemView);
@@ -153,6 +153,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             fechaInicio = itemView.findViewById(R.id.fechaInicio);
             fechaFin = itemView.findViewById(R.id.fechaFin);
             edit = itemView.findViewById(R.id.editIcon);
+            delete=(ImageView)itemView.findViewById(R.id.deleteIcon);
 
         }
     }
