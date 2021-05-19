@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,6 +83,9 @@ public class ResetPassword extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+                startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;
