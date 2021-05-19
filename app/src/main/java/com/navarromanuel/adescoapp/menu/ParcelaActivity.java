@@ -121,9 +121,15 @@ public class ParcelaActivity extends AppCompatActivity {
 
     private void processSearch(String s)
     {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        DatabaseReference references =
+                FirebaseDatabase.getInstance().getReference()
+                        .child("Parcelas").child(""+user.getUid());
+
         FirebaseRecyclerOptions<Parcela> options =
                 new FirebaseRecyclerOptions.Builder<Parcela>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Parcelas").orderByChild("id").startAt(s).endAt(s+"\uf8ff"), Parcela.class)
+                        .setQuery(references.orderByChild("id").startAt(s).endAt(s+"\uf8ff"), Parcela.class)
                         .build();
 
         adapter=new ParcelaAdapter(options);
