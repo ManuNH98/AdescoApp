@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.menu.CuadernoActivity;
 import com.navarromanuel.adescoapp.menu.InventarioActivity;
 import com.navarromanuel.adescoapp.menu.ParcelaActivity;
 import com.navarromanuel.adescoapp.menu.PerfilActivity;
@@ -27,12 +28,15 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void enviarParcela(View view) {
-        Intent intent1 = new  Intent(MenuActivity.this, ParcelaActivity.class);
-        startActivity(intent1);
+        Intent intent = new  Intent(MenuActivity.this, ParcelaActivity.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarCDC(View view) {
+        Intent intent = new  Intent(MenuActivity.this, CuadernoActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarInventario(View view) {
@@ -42,8 +46,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void enviarPerfil(View view) {
-        Intent intent4 = new  Intent(MenuActivity.this, PerfilActivity.class);
-        startActivity(intent4);
+        Intent intent = new  Intent(MenuActivity.this, PerfilActivity.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 

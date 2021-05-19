@@ -79,8 +79,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="0m X 0m"
+                android:hint="metros"
                 android:id="@+id/edtMetros"
+                android:inputType="number"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
@@ -117,7 +118,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Fecha Inicio"
+                android:hint="dd/mm/aaaa"
                 android:id="@+id/edtFechaInicio"
                 android:layout_marginLeft="10dp"
                 android:inputType="date"
@@ -137,7 +138,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Fecha Fin"
+                android:hint="dd/mm/aaaa"
                 android:id="@+id/edtFechaFin"
                 android:layout_marginLeft="10dp"
                 android:inputType="date"
