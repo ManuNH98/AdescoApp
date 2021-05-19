@@ -126,6 +126,13 @@ public class FitoActivity extends AppCompatActivity {
                     startActivity(intent);
 
                         }
+
+                       /* edtID.setText("");
+                        edtFechaA.setText("");
+                        edtProcedencia.setText("");
+                        edtNo.setText("");
+                        edtC.setText("");
+                        edtN.setText("");*/
             }
 
         });
@@ -138,7 +145,7 @@ public class FitoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                finish();
+                //finish();
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;
         }

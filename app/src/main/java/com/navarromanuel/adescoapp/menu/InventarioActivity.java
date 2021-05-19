@@ -53,6 +53,11 @@ public class InventarioActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
+
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+
+                startActivity(intent);
+
                 finish();
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;

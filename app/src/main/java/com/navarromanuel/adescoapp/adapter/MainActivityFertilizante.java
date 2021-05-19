@@ -1,7 +1,9 @@
 package com.navarromanuel.adescoapp.adapter;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,17 +18,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.navarromanuel.adescoapp.R;
 import com.navarromanuel.adescoapp.activity.PojoInventario;
+import com.navarromanuel.adescoapp.entidad.Parcela;
 
 public class MainActivityFertilizante extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-
+    RecyclerView recycler;
     FirebaseRecyclerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_fertilizante);
+        setTitle("Buscar por nombre...");
 
         // ICON EN ACTION BAR
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -43,7 +47,7 @@ public class MainActivityFertilizante extends AppCompatActivity {
                         .child("ProductoFertilizante").child(""+user.getUid());
 
 
-        RecyclerView recycler = findViewById(R.id.recycler_View_ftrz);
+        recycler = findViewById(R.id.recycler_View_ftrz);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -74,7 +78,52 @@ public class MainActivityFertilizante extends AppCompatActivity {
 
     }
 
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.searchmenu,menu);
 
+        MenuItem item=menu.findItem(R.id.search);
+
+        SearchView searchView=(SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+
+                processSearch(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                processSearch(s);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void processSearch(String s)
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        DatabaseReference references =
+                FirebaseDatabase.getInstance().getReference()
+                        .child("ProductoFertilizante").child(""+user.getUid());
+
+
+        FirebaseRecyclerOptions<PojoInventario> options =
+                new FirebaseRecyclerOptions.Builder<PojoInventario>()
+                        .setQuery(references.orderByChild("producto").startAt(s).endAt(s+"\uf8ff"), PojoInventario.class)
+                        .build();
+
+        mAdapter=new FertilizanteAdapter(options);
+        mAdapter.startListening();
+        recycler.setAdapter(mAdapter);
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
