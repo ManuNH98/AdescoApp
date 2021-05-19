@@ -18,8 +18,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.activity.PojoInventario;
 import com.navarromanuel.adescoapp.entidad.Parcela;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -30,6 +33,8 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapter.ParcelaViewHolder> {
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     public ParcelaAdapter(@NonNull FirebaseRecyclerOptions<Parcela> options){
         super(options);
@@ -83,8 +88,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
                             map.put("fechafin",fechaFin.getText().toString());
                             map.put("info",info.getText().toString());
 
-                            FirebaseDatabase.getInstance().getReference().child("Parcelas")
-                                    .child(getRef(position).getKey()).updateChildren(map)
+                            FirebaseDatabase.getInstance().getReference().child("Parcelas").child(""+user.getUid()).child(getRef(position).getKey()).updateChildren(map)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
@@ -102,6 +106,8 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             }
         });
 
+        parcelaViewHolder.bindGuardado(parcela);
+
         parcelaViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,8 +118,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("Parcelas")
-                                .child(getRef(position).getKey()).removeValue();
+                        FirebaseDatabase.getInstance().getReference().child("Parcelas").child(""+user.getUid()).child(getRef(position).getKey()).removeValue();
                     }
                 });
 
@@ -139,11 +144,13 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
     class ParcelaViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
+        View mView;
         TextView id, nombre, info, metros, tipoCultivo, fechaInicio, fechaFin;
         ImageView edit, delete;
 
         public ParcelaViewHolder(@NonNull View itemView){
             super(itemView);
+            mView = itemView;
 
             id = itemView.findViewById((R.id.id));
             nombre = itemView.findViewById(R.id.nombreParcela);
@@ -154,6 +161,21 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             fechaFin = itemView.findViewById(R.id.fechaFin);
             edit = itemView.findViewById(R.id.editIcon);
             delete=(ImageView)itemView.findViewById(R.id.deleteIcon);
+
+        }
+
+        public void bindGuardado(Parcela parcela) {
+            TextView field1, field2, field3;
+
+            field1 = mView.findViewById(R.id.nombreParcela);
+            field1.setText(parcela.getNombre());
+
+            field2 = mView.findViewById(R.id.id);
+            field2.setText("Id: \n" + parcela.getId());
+
+            field3 = mView.findViewById(R.id.metros);
+            field3.setText("Metros Cuadrados: \n" + parcela.getMetros());
+
 
         }
     }

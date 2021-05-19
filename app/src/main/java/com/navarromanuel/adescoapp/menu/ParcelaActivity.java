@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.Context;
 import com.navarromanuel.adescoapp.R;
+import com.navarromanuel.adescoapp.activity.MenuActivity;
 import com.navarromanuel.adescoapp.adapter.ParcelaAdapter;
 import com.navarromanuel.adescoapp.entidad.Parcela;
 
@@ -34,14 +37,9 @@ import java.util.List;
 public class ParcelaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewParcela;
+    FloatingActionButton fab;
     ParcelaAdapter adapter;
-    DatabaseReference referencia;
-    FirebaseDatabase basededatos;
-
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-    // FIREBASE
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,22 +51,32 @@ public class ParcelaActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.drawable.logo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        DatabaseReference references =
+                FirebaseDatabase.getInstance().getReference()
+                        .child("Parcelas").child(""+user.getUid());
+
+        fab = findViewById(R.id.floatingActionButton);
         recyclerViewParcela = findViewById(R.id.recyclerView);
         recyclerViewParcela.setLayoutManager(new  LinearLayoutManager(this));
 
-        referencia = basededatos.getInstance().getReference().child("Parcelas").child(""+user.getUid()).push();
-
         FirebaseRecyclerOptions<Parcela> options =
                 new FirebaseRecyclerOptions.Builder<Parcela>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Parcelas"), Parcela.class)
+                        .setQuery(references, Parcela.class)
                         .build();
 
         adapter=new ParcelaAdapter(options);
         recyclerViewParcela.setAdapter(adapter);
 
-        mAuth = FirebaseAuth.getInstance();
 
+    }
 
+    public void enviarNuevaParcela(View view){
+        Intent intent = new  Intent(ParcelaActivity.this, AniadirParcelaActivity.class);
+        startActivity(intent);
     }
 
     @Override

@@ -4,9 +4,9 @@ public class Parcela {
     private String id, nombre, info, metros, tipo, fechainicio, Uid,fechafin;
     private int imagenid;
 
-    Parcela(){}
+    public Parcela(){}
 
-    public Parcela(String id, String Uid, String nombre, String info, String metros, String tipo, String fechainicio, String fechafin, int imagenid) {
+    /*public Parcela(String id, String Uid, String nombre, String info, String metros, String tipo, String fechainicio, String fechafin, int imagenid) {
         this.Uid = Uid;
         this.id = id;
         this.nombre = nombre;
@@ -16,7 +16,7 @@ public class Parcela {
         this.fechainicio = fechainicio;
         this.fechafin = fechafin;
         this.imagenid = imagenid;
-    }
+    }*/
 
     public String getId() {
         return id;

@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdescoApp">
         <activity android:name=".menu.CuadernoActivity"/>
+        <activity android:name=".menu.AniadirParcelaActivity"/>
         <activity android:name=".menu.ActualizarPerfil" />
         <activity android:name=".adapter.MainActivityFitosanitario" />
         <activity android:name=".adapter.MainActivityFertilizante" />

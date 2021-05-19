@@ -29,7 +29,6 @@
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
-            android:visibility="invisible"
             android:text="id"
             android:textSize="1sp"
             android:textStyle="bold"/>
@@ -56,7 +55,7 @@
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
             android:text="Info"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/metros"
@@ -78,6 +77,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
+            android:visibility="gone"
             android:text="Tipo de cultivo" />
 
         <TextView
@@ -89,7 +89,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:text="FechaInicio" />
 
         <TextView
@@ -101,7 +101,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/imagenParcela"
             android:layout_toRightOf="@id/imagenParcela"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:text="FechaFin" />
 
         <ImageView
