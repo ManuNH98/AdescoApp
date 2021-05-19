@@ -208,7 +208,7 @@ public class ActualizarPerfil extends AppCompatActivity {
 
                             startActivity(intent);
                             finish();
-                            //overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                            overridePendingTransition(R.anim.left_in, R.anim.left_out);
                            //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
                             Toast.makeText(getApplicationContext(), "Se han actualizado los datos correctamente", Toast.LENGTH_SHORT).show();
                             dialog.cancel();
@@ -239,7 +239,7 @@ public class ActualizarPerfil extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:
                 finish();
-               // overridePendingTransition(R.anim.right_in, R.anim.right_out);
+               overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;
         }
 

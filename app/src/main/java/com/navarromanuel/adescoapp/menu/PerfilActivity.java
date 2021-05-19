@@ -164,7 +164,7 @@ public class PerfilActivity extends AppCompatActivity {
 
                 Intent intent1 = new  Intent(getApplicationContext(), ActualizarPerfil.class);
                 startActivity(intent1);
-
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 //overridePendingTransition(R.anim.right_in, R.anim.right_out);
 
             }
@@ -178,7 +178,7 @@ public class PerfilActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:
                 finish();
-                //overridePendingTransition(R.anim.right_in, R.anim.right_out);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;
         }
 

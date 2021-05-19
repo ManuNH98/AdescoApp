@@ -29,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private Button btnRes, btnVolver;
+    private EditText editTextTextPassword;
+    private EditText inputEmail;
     private EditText editNombre, editApe, editNIF,
             editTlfEm, editDirec, editNombreEm, editCodEm, editCiudadEm,
             editProvinciaEm, editCif, editRegistroN, editRegistroA;
@@ -56,6 +58,9 @@ public class RegisterActivity extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Pojo = new Pojo();
+
+        inputEmail = (EditText) findViewById(R.id.editTextTextEmailAddress);
+        editTextTextPassword = (EditText)findViewById(R.id.editTextTextPassword);
 
         editNombre = (EditText) findViewById(R.id.edtNombre);
         editApe = (EditText) findViewById(R.id.edtApellido);
@@ -196,7 +201,9 @@ public class RegisterActivity extends AppCompatActivity {
                             Pojo.setUid(user.getUid());
                             referencia.child(user.getUid()).setValue(Pojo);
 
+                            //guardarR();
                         }
+
 
                         //Toast.makeText(ThirdActivity.this, "Resgistrado", Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(), "Se ha registrado los datos correctamente", Toast.LENGTH_SHORT).show();
@@ -281,24 +288,51 @@ public class RegisterActivity extends AppCompatActivity {
 
     }*/
 
-   /* private void guardar() {
+   /*private void guardar() {
 
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
 
         String nombre = editNombre.getText().toString();
         String apellido = editApe.getText().toString();
         String nif = editNIF.getText().toString();
-        //String email = editEmail.getText().toString();
-        //String pass = edtPass.getText().toString();
+        String email = editEmail.getText().toString();
+        String pass = edtPass.getText().toString();
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("user", nombre);
         editor.putString("ape", apellido);
         editor.putString("nif", nif);
-        //editor.putString("email", email);
-        //editor.putString("pass", pass);
+        editor.putString("email", email);
+        editor.putString("pass", pass);
 
         editor.commit();
+
+    }*/
+
+   /* private void guardarR() {
+
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+
+        String email = inputEmail.getText().toString();
+        String pass = editTextTextPassword.getText().toString();
+
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("email", email);
+        editor.putString("pass", pass);
+
+        editor.commit();
+
+    }*/
+
+    /*private void cargarL() {
+
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String email = preferences.getString("email", "");
+        String pass = preferences.getString("pass", "");
+
+        inputEmail.setText(email);
+        editTextTextPassword.setText(pass);
 
     }*/
 

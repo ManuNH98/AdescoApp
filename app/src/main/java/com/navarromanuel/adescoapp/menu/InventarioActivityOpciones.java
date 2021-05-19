@@ -30,16 +30,19 @@ public class InventarioActivityOpciones extends AppCompatActivity {
     public void enviarFitosanitario(View view) {
         Intent intent = new  Intent(InventarioActivityOpciones.this, MainActivityFitosanitario.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarFertilizantes(View view) {
         Intent intent2 = new  Intent(InventarioActivityOpciones.this, MainActivityFertilizante.class);
         startActivity(intent2);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarHerramientas(View view) {
         Intent intent1 = new  Intent(InventarioActivityOpciones.this, MainActivityTool.class);
         startActivity(intent1);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
 
@@ -48,7 +51,7 @@ public class InventarioActivityOpciones extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:
                 finish();
-                //overridePendingTransition(R.anim.right_in, R.anim.right_out);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;
         }
 

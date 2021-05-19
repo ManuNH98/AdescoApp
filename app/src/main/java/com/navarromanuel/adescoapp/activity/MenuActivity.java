@@ -29,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
     public void enviarParcela(View view) {
         Intent intent1 = new  Intent(MenuActivity.this, ParcelaActivity.class);
         startActivity(intent1);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarCDC(View view) {
@@ -37,11 +38,13 @@ public class MenuActivity extends AppCompatActivity {
     public void enviarInventario(View view) {
         Intent intent = new  Intent(MenuActivity.this, InventarioActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     public void enviarPerfil(View view) {
         Intent intent4 = new  Intent(MenuActivity.this, PerfilActivity.class);
         startActivity(intent4);
+        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
     }
 
     /*@Override
