@@ -109,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (editApe.length() == 0 || editNombre.length() == 0 || editNIF.length() == 0 || editTlfEm.length() == 0
+                if (editNombre.length() == 0  || editTlfEm.length() == 0
                         || editNombreEm.length() == 0 || editCif.length() == 0 || editCiudadEm.length() == 0
                         || editProvinciaEm.length() == 0 || editDirec.length() == 0 || editCodEm.length() == 0
                         || editRegistroA.length() == 0 || editRegistroN.length() == 0) {
