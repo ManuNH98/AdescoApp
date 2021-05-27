@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="TIPO DE PRODUCTO"
             android:layout_marginTop="45dp"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="55dp"
             android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold" />
