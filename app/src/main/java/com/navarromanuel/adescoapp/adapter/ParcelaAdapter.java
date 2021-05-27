@@ -182,7 +182,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             field2.setText(parcela.getNombre());
 
             field3 = mView.findViewById(R.id.id);
-            field3.setText("Id: " + parcela.getId());
+            field3.setText("ID: " + parcela.getId());
 
             field4 = mView.findViewById(R.id.metros);
             field4.setText(parcela.getMetros());
