@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="89dp"
         android:layout_height="71dp"
-        android:layout_marginLeft="160dp"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/tubo" />
 
