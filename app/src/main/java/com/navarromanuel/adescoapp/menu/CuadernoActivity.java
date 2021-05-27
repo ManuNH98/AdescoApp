@@ -17,7 +17,7 @@ import java.net.URI;
 public class CuadernoActivity extends AppCompatActivity{
 
     String url_firebase = "https://console.firebase.google.com/u/2/project/adesco-cdc21/database/adesco-cdc21-default-rtdb/data";
-            String url_pdf = "https://anyconv.com/es/convertidor-de-json-a-pdf/";
+    String url_pdf = "https://anyconv.com/es/convertidor-de-json-a-pdf/";
     String url_csv = "https://csvjson.com/json2csv";
     Button b1, b2, b3;
 
@@ -45,25 +45,25 @@ public class CuadernoActivity extends AppCompatActivity{
         });
 
 
-    b2.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Uri linkP = Uri.parse(url_pdf);
-            Intent a = new Intent(Intent.ACTION_VIEW,linkP);
-            startActivity(a);
-        }
-    });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri linkP = Uri.parse(url_pdf);
+                Intent a = new Intent(Intent.ACTION_VIEW,linkP);
+                startActivity(a);
+            }
+        });
 
 
         b3.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Uri linkC = Uri.parse(url_csv);
-            Intent q = new Intent(Intent.ACTION_VIEW,linkC);
-            startActivity(q);
-                }
-                });
-                }
+            @Override
+            public void onClick(View v) {
+                Uri linkC = Uri.parse(url_csv);
+                Intent q = new Intent(Intent.ACTION_VIEW,linkC);
+                startActivity(q);
+            }
+        });
+    }
 
 
     @Override

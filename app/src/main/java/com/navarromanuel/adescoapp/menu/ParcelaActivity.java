@@ -45,8 +45,9 @@ public class ParcelaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parcela);
-        setTitle("Buscar..");
+        setTitle("Buscar por ID..");
 
+        getSupportActionBar().setTitle("Parcela");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.logo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -142,6 +143,8 @@ public class ParcelaActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 return true;

@@ -8,9 +8,9 @@
     <ImageView
         android:id="@+id/imagen_detalleid"
         android:layout_width="410dp"
-        android:layout_height="210dp"
+        android:layout_height="310dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/parcelasviso" />
 
     <TextView
         android:id="@+id/nombre_detalle"

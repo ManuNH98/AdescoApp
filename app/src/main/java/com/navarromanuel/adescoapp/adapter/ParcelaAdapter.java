@@ -3,6 +3,7 @@ package com.navarromanuel.adescoapp.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +15,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.navarromanuel.adescoapp.R;
-import com.navarromanuel.adescoapp.activity.PojoInventario;
 import com.navarromanuel.adescoapp.entidad.Parcela;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -30,9 +32,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapter.ParcelaViewHolder> {
+public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapter.ParcelaViewHolder>{
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -42,14 +42,15 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
     @Override
     protected void onBindViewHolder(@NonNull final ParcelaViewHolder parcelaViewHolder, final int position, @NonNull final Parcela parcela){
+
         parcelaViewHolder.id.setText(parcela.getId());
         parcelaViewHolder.nombre.setText(parcela.getNombre());
         parcelaViewHolder.tipoCultivo.setText(parcela.getTipo());
+        parcelaViewHolder.riego.setText(parcela.getRiego());
         parcelaViewHolder.metros.setText(parcela.getMetros());
         parcelaViewHolder.fechaInicio.setText(parcela.getFechainicio());
         parcelaViewHolder.fechaFin.setText(parcela.getFechafin());
         parcelaViewHolder.info.setText(parcela.getInfo());
-
 
         parcelaViewHolder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
                 View myview=dialogPlus.getHolderView();
                 final EditText nombre=myview.findViewById(R.id.nombreEditar);
                 final EditText tipoCultivo=myview.findViewById(R.id.tipoEditar);
+                final EditText riego=myview.findViewById(R.id.riegoEditar);
                 final EditText metros=myview.findViewById(R.id.metrosEditar);
                 final EditText fechaInicio=myview.findViewById(R.id.fechaInicioEditar);
                 final EditText fechaFin=myview.findViewById(R.id.fechaFinEditar);
@@ -70,6 +72,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
 
                 nombre.setText(parcela.getNombre());
                 tipoCultivo.setText(parcela.getTipo());
+                riego.setText(parcela.getRiego());
                 metros.setText(parcela.getMetros());
                 fechaInicio.setText(parcela.getFechainicio());
                 fechaFin.setText(parcela.getFechafin());
@@ -83,6 +86,7 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
                             Map<String,Object> map=new HashMap<>();
                             map.put("nombre",nombre.getText().toString());
                             map.put("tipo",tipoCultivo.getText().toString());
+                            map.put("riego",riego.getText().toString());
                             map.put("metros",metros.getText().toString());
                             map.put("fechainicio",fechaInicio.getText().toString());
                             map.put("fechafin",fechaFin.getText().toString());
@@ -112,10 +116,10 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(parcelaViewHolder.nombre.getContext());
-                builder.setTitle("Delete Panel");
-                builder.setMessage("Delete...?");
+                builder.setTitle("Eliminar Parcela");
+                builder.setMessage("¿Seguro que quieres eliminar?");
 
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseDatabase.getInstance().getReference().child("Parcelas").child(""+user.getUid()).child(getRef(position).getKey()).removeValue();
@@ -143,40 +147,58 @@ public class ParcelaAdapter extends FirebaseRecyclerAdapter<Parcela,ParcelaAdapt
     }
 
     class ParcelaViewHolder extends RecyclerView.ViewHolder{
-        CircleImageView img;
         View mView;
-        TextView id, nombre, info, metros, tipoCultivo, fechaInicio, fechaFin;
-        ImageView edit, delete;
+        TextView id, nombre, info, metros, tipoCultivo, fechaInicio, fechaFin, riego;
+        ImageView imagen, edit, delete;
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Parcelas").child(""+user.getUid()).child("-MaY0YEMphksL0xC2rB2");
 
         public ParcelaViewHolder(@NonNull View itemView){
             super(itemView);
             mView = itemView;
 
+            imagen = itemView.findViewById(R.id.imagenParcela);
             id = itemView.findViewById((R.id.id));
             nombre = itemView.findViewById(R.id.nombreParcela);
             info = itemView.findViewById(R.id.info);
             metros = itemView.findViewById(R.id.metros);
             tipoCultivo = itemView.findViewById(R.id.tipoCultivo);
+            riego = itemView.findViewById(R.id.tipoRiego);
             fechaInicio = itemView.findViewById(R.id.fechaInicio);
             fechaFin = itemView.findViewById(R.id.fechaFin);
             edit = itemView.findViewById(R.id.editIcon);
-            delete=(ImageView)itemView.findViewById(R.id.deleteIcon);
+            delete = itemView.findViewById(R.id.deleteIcon);
 
         }
 
         public void bindGuardado(Parcela parcela) {
-            TextView field1, field2, field3;
+            TextView field2, field3, field4, field5, field6, field7, field8;
+            ImageView field1;
 
-            field1 = mView.findViewById(R.id.nombreParcela);
-            field1.setText(parcela.getNombre());
+            field1 = mView.findViewById(R.id.imagenParcela);
+            Glide.with(itemView).load(databaseReference).placeholder(R.drawable.parcelasviso).error(R.drawable.parcelasviso).into(field1);
 
-            field2 = mView.findViewById(R.id.id);
-            field2.setText("Id: " + parcela.getId());
+            field2 = mView.findViewById(R.id.nombreParcela);
+            field2.setText(parcela.getNombre());
 
-            field3 = mView.findViewById(R.id.metros);
-            field3.setText(parcela.getMetros());
+            field3 = mView.findViewById(R.id.id);
+            field3.setText("Id: " + parcela.getId());
 
+            field4 = mView.findViewById(R.id.metros);
+            field4.setText(parcela.getMetros());
 
+            field5 = mView.findViewById(R.id.tipoCultivo);
+            field5.setText("Cultivo: " + parcela.getTipo());
+
+            field6 = mView.findViewById(R.id.tipoRiego);
+            field6.setText("Riego: " + parcela.getRiego());
+
+            field7 = mView.findViewById(R.id.fechaInicio);
+            field7.setText("Fecha Plantación: \n" + parcela.getFechainicio());
+
+            field8 = mView.findViewById(R.id.fechaFin);
+            field8.setText("Fecha Recolección: \n" + parcela.getFechafin());
         }
+
     }
 }

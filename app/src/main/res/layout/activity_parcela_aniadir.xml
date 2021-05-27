@@ -29,14 +29,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="80dp"
             android:padding="50dp">
-
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="15dp"
                 android:text="ID Parcela:"
                 android:textAllCaps="true"
                 android:textSize="16dp"
@@ -46,7 +46,7 @@
                 android:id="@+id/edtId"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="   Id" />
+                android:hint="Id" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Metros:"
+                android:text="Metros Cuadrados:"
                 android:textAllCaps="true"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -79,7 +79,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="metros"
+                android:hint="metros cuadrados"
                 android:id="@+id/edtMetros"
                 android:inputType="number"
                 android:layout_marginLeft="10dp"
@@ -110,7 +110,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Fecha Inicio:"
+                android:text="Tipo de Riego:"
+                android:textAllCaps="true"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo"
+                android:id="@+id/edtRiego"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Fecha de Plantación:"
                 android:textAllCaps="true"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -130,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Fecha Fin:"
+                android:text="Fecha de Recolección:"
                 android:textAllCaps="true"
                 android:textSize="16dp"
                 android:textStyle="bold" />

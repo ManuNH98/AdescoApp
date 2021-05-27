@@ -118,7 +118,7 @@ public class MainActivityFitosanitario extends AppCompatActivity {
                         .setQuery(references.orderByChild("producto").startAt(s).endAt(s+"\uf8ff"), PojoInventario.class)
                         .build();
 
-        mAdapter=new FertilizanteAdapter(options);
+        mAdapter=new GuardadoAdapter(options);
         mAdapter.startListening();
         recycler.setAdapter(mAdapter);
 
