@@ -140,8 +140,8 @@
 
         <ImageView
             android:id="@+id/editIcon"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="95dp"
@@ -150,8 +150,8 @@
 
         <ImageView
             android:id="@+id/deleteIcon"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/nombreParcela"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="105dp"
