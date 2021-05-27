@@ -111,9 +111,7 @@
                 android:id="@+id/editIcon"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:layout_below="@+id/tipoCultivo"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@+id/imagenParcela"
                 android:layout_marginTop="65dp"
                 android:src="@drawable/edit" />
 
@@ -121,10 +119,8 @@
                 android:id="@+id/editIconDelete"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:layout_below="@+id/tipoCultivo"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="100dp"
-                android:layout_toEndOf="@+id/imagenParcela"
                 android:src="@drawable/delete" />
 
         </RelativeLayout>
